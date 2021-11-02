@@ -1,7 +1,7 @@
 from Listener import Listener
 from Texte import Texte
 from PrepareGame import PrepareGame
-from Token import samu_token
+#from Token import samu_token
 import Roles
 from Votingsystem import VotingSystem
 from Helper import Helper
@@ -70,7 +70,7 @@ class GameLogic(object):
         intents.members = True
 
         self.client = Listener(self, self.text, intents = intents)
-        self.client.run(samu_token)
+        self.client.run(os.environ.get('TOKEN_SAMU'))
 
 
     # Erstellt beim Start des Spiels eine entsprechende Kategorie und ruft die join_game Methode auf

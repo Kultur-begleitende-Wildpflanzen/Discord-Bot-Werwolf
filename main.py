@@ -1,6 +1,9 @@
 # dumme Main Klasse weil repl kacke ist
 import logging
 import discord # <- weil dumm
+import os
+
+print(os.environ.get('TEST'))
 
 logging.basicConfig(level=logging.INFO)
 
