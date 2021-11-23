@@ -9,7 +9,7 @@ class SQL_DB:
 
     db = None
 
-    def __init__(self, host_id, user="werwolfbot", password=os.environ.get('DB_PASSWORD')):
+    def __init__(self, host_id, user, password):
         self.host_id = host_id
         self.user = user
         self.password = password
