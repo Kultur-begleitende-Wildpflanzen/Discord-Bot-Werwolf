@@ -67,9 +67,9 @@ class Listener(discord.Client):
                             # Sicherheitsfrage
                             dorfversammlung_text = await self.game_logic.helper.get_dorfversammlung_channel(message.channel.guild.id, "text")
                             msg_end_safety_question = await dorfversammlung_text.send(self.text.get_game_end_safety_question_text())
-                            self.game_logic.sql_db.update_where_from_table('temp_tabelle', 'Beschreibung', msg_end_safety_question.id, 'msg_end_safety_question', 'None')
+                            self.game_logic.sql_db.update_where_from_table('temp_tabelle', 'Beschreibung', msg_end_safety_question.id,'Beschreibung', 'msg_end_safety_question')
                             for emoji in self.game_logic.text.get_ynemojis():
-                                await self.msg_end_safety_question.add_reaction(emoji)
+                                await msg_end_safety_question.add_reaction(emoji)  # ToDo: AttributeError: 'Listener' object has no attribute 'msg_end_safety_question'
             
             # Befehle die ausgeführt werden können, wenn kein Spiel gestartet ist
             else:
